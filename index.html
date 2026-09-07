@@ -3,8 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfólio de Adrian Kauã, desenvolvedor Python Flask focado em aplicações web, sistemas responsivos e soluções digitais." />
-  <title>Adrian Kauã | Desenvolvedor Python Flask</title>
+  <meta name="description" content="Portfólio de Adrian Kauã Vieira da Silva, Desenvolvedor Backend Python com experiência em APIs, automação, bancos de dados e sistemas escaláveis." />
+  <link rel="canonical" href="https://adriankoll.github.io/My_Portfolio/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://adriankoll.github.io/My_Portfolio/" />
+  <meta property="og:title" content="Adrian Kauã | Desenvolvedor Backend Python" />
+  <meta property="og:description" content="Portfólio de Adrian Kauã, Desenvolvedor Backend Python focado em APIs, automação e integridade de dados." />
+  <meta property="og:image" content="https://adriankoll.github.io/My_Portfolio/assets/avatar.png" />
+  <meta property="og:image:alt" content="Avatar profissional de Adrian Kauã" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Adrian Kauã | Desenvolvedor Backend Python" />
+  <meta name="twitter:description" content="Portfólio de Adrian Kauã, Desenvolvedor Backend Python focado em APIs, automação e integridade de dados." />
+  <meta name="twitter:image" content="https://adriankoll.github.io/My_Portfolio/assets/avatar.png" />
+  <title>Adrian Kauã | Desenvolvedor Backend Python</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,18 +45,18 @@
       <a class="nav__link" href="#contato">Contato</a>
     </nav>
 
-    <a class="button button--ghost header__button" href="mailto:adryank706@gmail.com">
+    <a class="button button--ghost header__button" href="mailto:adriankaua0233@gmail.com">
       Contato <i class="fa-regular fa-envelope"></i>
     </a>
 
-    <button class="menu-button" id="menuButton" type="button" aria-label="Abrir menu" aria-expanded="false">
+    <button class="menu-button" id="menuButton" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
   </header>
 
 
   <!-- Seção Menu Mobile -->
-  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true" aria-labelledby="menuButton">
     <a href="#inicio">Início</a>
     <a href="#projetos">Projetos</a>
     <a href="#sobre">Sobre</a>
@@ -58,11 +69,12 @@
     <section class="hero section" id="inicio">
       <div class="container hero__grid">
         <div class="hero__content reveal">
-          <div class="eyebrow"><span></span> Desenvolvedor Python Flask</div>
-          <h1>Transformo ideias em <span>soluções</span> digitais profissionais.</h1>
+          <div class="eyebrow"><span></span> Desenvolvedor Backend Python</div>
+          <h1>Construo <span>APIs</span> e sistemas para produtos reais.</h1>
           <p>
-            Crio aplicações web modernas, responsivas e organizadas, com foco em resolver
-            problemas reais usando Python, Flask, banco de dados e visão de produto.
+            Estudante de Engenharia de Software e Desenvolvedor Backend Python com experiência prática
+            entregando soluções comerciais — do levantamento de requisitos ao deploy containerizado,
+            com foco em automação, integridade de dados e eficiência operacional.
           </p>
 
           <div class="hero__actions">
@@ -73,31 +85,31 @@
           <div class="social-box">
             <span>Conecte-se comigo</span>
             <div class="social-box__links">
-              <a href="https://github.com/AdrianKoll" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/adrian-kaua" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="mailto:adriankaua0233@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
-              <a href="https://wa.me/5561985318614" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+              <a href="https://github.com/AdrianKoll" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/adrian-kaua" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="mailto:adriankaua0233@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope" aria-hidden="true"></i></a>
+              <a href="https://wa.me/5561985318614" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
           </div>
         </div>
 
         <!-- Seção Avatar -->
-        <div class="hero__visual reveal delay-1" aria-label="Avatar profissional de Adrian Kauã">
+        <div class="hero__visual reveal delay-1" role="img" aria-label="Avatar profissional de Adrian Kauã">
           <div class="hero__glow" aria-hidden="true"></div>
           <div class="hero__ring" aria-hidden="true"></div>
           <img class="avatar avatar--hero" src="assets/avatar.png" alt="Avatar profissional de Adrian Kauã" />
           <div class="hero__status tech-card tech-card--database"><i class="fa-solid fa-database"></i><strong>PostgreSQL</strong></div>
-          <div class="tech-card tech-card--python"><i class="fa-brands fa-python"></i><strong>Flask APIs</strong></div>
-          <div class="tech-card tech-card--frontend"><i class="fa-brands fa-js"></i><strong>JavaScript UI</strong></div>
+          <div class="tech-card tech-card--python"><i class="fa-brands fa-python"></i><strong>FastAPI · Flask</strong></div>
+          <div class="tech-card tech-card--frontend"><i class="fa-brands fa-js"></i><strong>JavaScript</strong></div>
         </div>
       </div>
 
       <!-- Seção Métricas -->
       <div class="container stats reveal delay-2">
-        <article><i class="fa-solid fa-code"></i><strong>3+</strong><span>Anos de experiência</span></article>
-        <article><i class="fa-regular fa-folder-open"></i><strong>4+</strong><span>Projetos no GitHub</span></article>
-        <article><i class="fa-solid fa-layer-group"></i><strong>16+</strong><span>Tecnologias</span></article>
-        <article><i class="fa-regular fa-star"></i><strong>100%</strong><span>Foco em qualidade</span></article>
+        <article><i class="fa-regular fa-calendar"></i><strong>01/2024</strong><span>Freelancer autônomo desde</span></article>
+        <article><i class="fa-regular fa-folder-open"></i><strong>4</strong><span>Projetos em destaque</span></article>
+        <article><i class="fa-solid fa-code-branch"></i><strong>2</strong><span>Projetos com versão vendida</span></article>
+        <article><i class="fa-regular fa-star"></i><strong>3</strong><span>Frameworks Python na stack</span></article>
       </div>
     </section>
 
@@ -106,42 +118,42 @@
       <div class="container section-heading reveal">
         <div>
           <h2>Projetos em <span>destaque</span></h2>
-          <p>Sistemas completos com interface moderna, regra de negócio e organização profissional.</p>
+          <p>Projetos comerciais e soluções backend desenvolvidos a partir de necessidades reais de negócio.</p>
         </div>
-        <a class="button button--ghost" href="https://github.com/AdrianKoll" target="_blank" rel="noopener">Ver GitHub <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="button button--ghost" href="https://github.com/AdrianKoll" target="_blank" rel="noopener noreferrer">Ver GitHub <i class="fa-solid fa-arrow-right"></i></a>
       </div>
 
       <div class="container project-grid">
-        <article class="project-card reveal" data-project="cashflow">
-          <div class="project-card__image"><img src="assets/cashflow.png" alt="Preview do CashFlow" /></div>
-          <button class="project-card__open" type="button" aria-label="Abrir detalhes do CashFlow"><i class="fa-solid fa-up-right-from-square"></i></button>
+        <article class="project-card reveal" data-project="syncus">
+          <div class="project-card__image project-card__image--syncus" role="img" aria-label="Representação visual do SyncUs"><i class="fa-solid fa-people-arrows" aria-hidden="true"></i></div>
+          <button class="project-card__open" type="button" aria-label="Abrir detalhes do SyncUs"><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></button>
+          <h3>SyncUs</h3>
+          <p>API em desenvolvimento para gestão financeira de casais, com autenticação e comunicação em tempo real.</p>
+          <div class="tags"><span>Em desenvolvimento</span><span>FastAPI</span><span>WebSockets</span></div>
+        </article>
+
+        <article class="project-card reveal delay-1" data-project="cashflow">
+          <div class="project-card__image project-card__image--cashflow" role="img" aria-label="Ícone de fluxo financeiro do CashFlow"><i class="fa-solid fa-money-bill-trend-up" aria-hidden="true"></i></div>
+          <button class="project-card__open" type="button" aria-label="Abrir detalhes do CashFlow"><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></button>
           <h3>CashFlow</h3>
-          <p>Gestão financeira com dashboard, entradas, saídas, metas e relatórios.</p>
-          <div class="tags"><span>Python</span><span>Flask</span><span>PostgreSQL</span></div>
+          <p>Sistema mobile-first em Flask para controle financeiro, relatórios e backups automatizados.</p>
+          <div class="tags"><span>Vendido e em uso</span><span>Flask</span><span>SQLAlchemy</span></div>
         </article>
 
-        <article class="project-card reveal delay-1" data-project="serviceflow">
-          <div class="project-card__image"><img src="assets/serviceflow.png" alt="Preview do ServiceFlow" /></div>
-          <button class="project-card__open" type="button" aria-label="Abrir detalhes do ServiceFlow"><i class="fa-solid fa-up-right-from-square"></i></button>
+        <article class="project-card reveal delay-2" data-project="serviceflow">
+          <div class="project-card__image project-card__image--serviceflow" role="img" aria-label="Ícone de fluxo operacional do ServiceFlow"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></div>
+          <button class="project-card__open" type="button" aria-label="Abrir detalhes do ServiceFlow"><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></button>
           <h3>ServiceFlow</h3>
-          <p>Gestão operacional para serviços, equipe, produtividade e indicadores.</p>
-          <div class="tags"><span>Flask</span><span>SQLAlchemy</span><span>MVC</span></div>
+          <p>Gestão operacional modular em Flask com permissões por papel e landing page integrada.</p>
+          <div class="tags"><span>Versão base vendida</span><span>Flask</span><span>RBAC</span></div>
         </article>
 
-        <article class="project-card reveal delay-2" data-project="inventory">
-          <div class="project-card__image"><img src="assets/inventory.png" alt="Preview do Inventory Manager" /></div>
-          <button class="project-card__open" type="button" aria-label="Abrir detalhes do Inventory Manager"><i class="fa-solid fa-up-right-from-square"></i></button>
-          <h3>Inventory Manager</h3>
-          <p>Controle de estoque com alertas, categorias e movimentações.</p>
-          <div class="tags"><span>Python</span><span>SQLite</span><span>Desktop</span></div>
-        </article>
-
-        <article class="project-card reveal delay-3" data-project="vehicle">
-          <div class="project-card__image"><img src="assets/vehicle.png" alt="Preview do Vehicle Access" /></div>
-          <button class="project-card__open" type="button" aria-label="Abrir detalhes do Vehicle Access"><i class="fa-solid fa-up-right-from-square"></i></button>
-          <h3>Vehicle Access</h3>
-          <p>Controle de entrada e saída de veículos com painel de acompanhamento.</p>
-          <div class="tags"><span>Flask</span><span>CRUD</span><span>Dashboard</span></div>
+        <article class="project-card reveal delay-3" data-project="medextract">
+          <div class="project-card__image project-card__image--medextract" role="img" aria-label="Representação visual do MedExtract AI"><i class="fa-solid fa-file-waveform" aria-hidden="true"></i></div>
+          <button class="project-card__open" type="button" aria-label="Abrir detalhes do MedExtract AI"><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i></button>
+          <h3>MedExtract AI</h3>
+          <p>Protótipo de extração de dados com IA para áudio e OCR em ambiente farmacêutico.</p>
+          <div class="tags"><span>Protótipo entregue</span><span>OpenAI API</span><span>OCR</span></div>
         </article>
       </div>
     </section>
@@ -153,14 +165,15 @@
           <div class="about-card__content">
             <h2>Sobre <span>mim</span></h2>
             <p>
-              Sou Adrian Kauã, desenvolvedor focado em Python, Flask e aplicações web.
-              Gosto de transformar requisitos reais em sistemas organizados, úteis e com visual profissional.
+              Sou Adrian Kauã, estudante de Engenharia de Software e Desenvolvedor Backend Python.
+              Atuo como freelancer autônomo desde janeiro de 2024, conduzindo requisitos, modelagem de dados,
+              desenvolvimento, testes, deploy containerizado e manutenção evolutiva.
             </p>
             <ul>
-              <li><i class="fa-regular fa-circle-check"></i>Código limpo e bem estruturado</li>
-              <li><i class="fa-regular fa-circle-check"></i>Design moderno e responsivo</li>
-              <li><i class="fa-regular fa-circle-check"></i>Visão de produto e regra de negócio</li>
-              <li><i class="fa-regular fa-circle-check"></i>Aprendizado constante</li>
+              <li><i class="fa-regular fa-circle-check"></i>APIs eficientes e sistemas escaláveis</li>
+              <li><i class="fa-regular fa-circle-check"></i>Automação e integridade de dados</li>
+              <li><i class="fa-regular fa-circle-check"></i>Ciclo completo: requisitos ao deploy</li>
+              <li><i class="fa-regular fa-circle-check"></i>Objetivo: Backend Júnior ou Estágio</li>
             </ul>
             <a class="button button--secondary" href="#contato">Falar comigo <i class="fa-regular fa-user"></i></a>
           </div>
@@ -173,34 +186,54 @@
 
         <article class="skills-card reveal delay-1" id="skills">
           <h2>Skills & <span>Tecnologias</span></h2>
-          <p>Tecnologias que uso para construir aplicações modernas.</p>
+          <p>Tecnologias que utilizo para construir APIs, sistemas e soluções backend.</p>
           <div class="skill-list">
             <span><i class="fa-brands fa-python"></i>Python</span>
+            <span><i class="fa-solid fa-bolt"></i>FastAPI</span>
             <span><i class="fa-solid fa-flask"></i>Flask</span>
-            <span><i class="fa-solid fa-database"></i>SQLAlchemy</span>
-            <span><i class="fa-solid fa-server"></i>PostgreSQL</span>
-            <span><i class="fa-brands fa-html5"></i>HTML5</span>
-            <span><i class="fa-brands fa-css3-alt"></i>CSS3</span>
+            <span><i class="fa-brands fa-python"></i>Django</span>
+            <span><i class="fa-solid fa-database"></i>SQLAlchemy · Alembic</span>
+            <span><i class="fa-solid fa-server"></i>PostgreSQL · SQLite</span>
+            <span><i class="fa-brands fa-docker"></i>Docker</span>
+            <span><i class="fa-solid fa-code-branch"></i>REST APIs · WebSockets</span>
+            <span><i class="fa-solid fa-key"></i>OAuth2 · JWT</span>
+            <span><i class="fa-brands fa-microsoft"></i>Azure AI Services</span>
+            <span><i class="fa-brands fa-git-alt"></i>Git &amp; GitHub</span>
+            <span><i class="fa-solid fa-vial"></i>Pytest</span>
             <span><i class="fa-brands fa-js"></i>JavaScript</span>
-            <span><i class="fa-brands fa-git-alt"></i>Git</span>
-            <span><i class="fa-brands fa-github"></i>GitHub</span>
-            <span><i class="fa-solid fa-mobile-screen"></i>PWA</span>
-            <span><i class="fa-solid fa-chart-line"></i>Chart.js</span>
-            <span><i class="fa-solid fa-code-branch"></i>APIs REST</span>
+            <span><i class="fa-brands fa-html5"></i>HTML5 · CSS3</span>
+            <span><i class="fa-solid fa-terminal"></i>Linux · Postman</span>
+            <span><i class="fa-solid fa-image"></i>Pillow</span>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- Seção Depoimentos -->
+    <!-- Seção Formação e certificações -->
+    <section class="section education" id="formacao">
+      <div class="container section-heading reveal">
+        <div>
+          <h2>Formação &amp; <span>certificações</span></h2>
+          <p>Formação acadêmica e cursos que complementam minha atuação em desenvolvimento backend.</p>
+        </div>
+      </div>
+      <div class="container testimonial-grid education-grid">
+        <article class="quote reveal"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><p>Bacharelado em Engenharia de Software.</p><strong>Anhanguera</strong><span>06/2023 – 12/2026</span></article>
+        <article class="quote reveal delay-1"><i class="fa-solid fa-certificate" aria-hidden="true"></i><p>CS50&apos;s Introduction to Programming with Python.</p><strong>HarvardX</strong><span>Curso concluído</span></article>
+        <article class="quote reveal delay-2"><i class="fa-solid fa-certificate" aria-hidden="true"></i><p>Formações em Backend Python, Azure AI, Cloud Essentials e Fullstack Web.</p><strong>DIO</strong><span>Formações e cursos</span></article>
+        <article class="quote reveal delay-3"><i class="fa-solid fa-certificate" aria-hidden="true"></i><p>Especializações em Processamento de Imagens com Python, Segurança da Informação e Redes.</p><strong>Especializações</strong><span>Formação complementar</span></article>
+      </div>
+    </section>
+
+    <!-- Seção Experiência com projetos reais -->
     <section class="section testimonials">
       <div class="container section-heading reveal">
-        <h2>O que dizem sobre <span>meu trabalho</span></h2>
+        <h2>Experiência com <span>projetos reais</span></h2>
       </div>
       <div class="container testimonial-grid">
-        <article class="quote reveal"><i class="fa-solid fa-quote-left"></i><p>Profissional dedicado, com boa organização e entrega visual acima da média.</p><strong>Projeto real</strong><span>Sistema web</span></article>
-        <article class="quote reveal delay-1"><i class="fa-solid fa-quote-left"></i><p>Conseguiu transformar uma necessidade simples em uma solução funcional e apresentável.</p><strong>Cliente local</strong><span>Gestão operacional</span></article>
-        <article class="quote reveal delay-2"><i class="fa-solid fa-quote-left"></i><p>Comunicação clara, cuidado com detalhes e evolução constante no desenvolvimento.</p><strong>Colaboração</strong><span>Requisitos e produto</span></article>
+        <article class="quote reveal"><i class="fa-solid fa-diagram-project"></i><p>Quatro projetos comerciais em destaque, com status que inclui desenvolvimento, protótipo entregue e versões vendidas.</p><strong>Ciclo completo</strong><span>Projetos comerciais</span></article>
+        <article class="quote reveal delay-1"><i class="fa-brands fa-python"></i><p>Sistemas backend construídos com Python, APIs REST/WebSockets e bancos de dados relacionais.</p><strong>Stack Backend</strong><span>FastAPI · Flask · Django</span></article>
+        <article class="quote reveal delay-2"><i class="fa-brands fa-docker"></i><p>Aplicações containerizadas com Docker e um protótipo com processamento de áudio e OCR por meio de IA.</p><strong>Infraestrutura &amp; IA</strong><span>Docker · Azure AI · OpenAI API</span></article>
       </div>
     </section>
 
@@ -209,9 +242,9 @@
       <div class="cta__icon"><i class="fa-regular fa-paper-plane"></i></div>
       <div>
         <h2>Vamos trabalhar juntos?</h2>
-        <p>Tenho foco em criar interfaces organizadas, sistemas úteis e projetos com acabamento profissional.</p>
+        <p>Busco atuar como Desenvolvedor Backend Júnior ou Estagiário, criando APIs eficientes e sistemas escaláveis.</p>
       </div>
-      <a class="button button--primary" href="mailto:adryank706@gmail.com">Entrar em contato <i class="fa-regular fa-paper-plane"></i></a>
+      <a class="button button--primary" href="mailto:adriankaua0233@gmail.com">Entrar em contato <i class="fa-regular fa-paper-plane"></i></a>
     </section>
   </main>
 
@@ -226,19 +259,19 @@
 
 
   <!-- Seção Modal de Projetos -->
-  <div class="project-modal" id="projectModal" aria-hidden="true">
-    <article class="project-modal__card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="project-modal" id="projectModal" aria-hidden="true" inert>
+    <article class="project-modal__card" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalText">
       <span class="project-modal__handle" aria-hidden="true"></span>
       <button class="project-modal__close" id="modalClose" type="button" aria-label="Fechar modal"><i class="fa-solid fa-xmark"></i></button>
       <span class="project-modal__category" id="modalCategory"></span>
       <h2 id="modalTitle"></h2>
-      <img id="modalImage" src="" alt="Preview do projeto selecionado" />
+      <img id="modalImage" src="" alt="Preview do projeto selecionado" hidden />
       <p id="modalText"></p>
       <h3>Funcionalidades</h3>
       <ul id="modalFeatures"></ul>
       <h3>Tecnologias</h3>
       <div class="tags" id="modalTags"></div>
-      <a class="button button--primary project-modal__link" id="modalLink" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Ver no GitHub</a>
+      <a class="button button--primary project-modal__link" id="modalLink" target="_blank" rel="noopener noreferrer" hidden><i class="fa-brands fa-github" aria-hidden="true"></i> Ver no GitHub</a>
     </article>
   </div>
 
