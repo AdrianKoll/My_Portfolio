@@ -24,65 +24,60 @@ const SELECTORS = {
 };
 
 const PROJECTS = {
+  syncus: {
+    title: 'SyncUs',
+    category: 'Em desenvolvimento',
+    image: null,
+    description: 'API em desenvolvimento para gestão financeira de casais, com autenticação OAuth2/JWT, comunicação em tempo real via WebSockets e arquitetura com PostgreSQL e Docker Compose.',
+    features: [
+      'API desenvolvida com FastAPI',
+      'Autenticação com OAuth2/JWT',
+      'Comunicação em tempo real via WebSockets',
+      'Arquitetura com PostgreSQL e Docker Compose'
+    ],
+    tags: ['FastAPI', 'PostgreSQL', 'WebSockets'],
+    link: null
+  },
   cashflow: {
     title: 'CashFlow',
-    category: 'Finanças',
+    category: 'Vendido e em uso',
     image: 'assets/cashflow.png',
-    description: 'Aplicação completa para controle financeiro pessoal e operacional. Permite registrar entradas e saídas, acompanhar saldo, categorizar despesas e visualizar indicadores.',
+    description: 'Sistema mobile-first em Flask para controle de fluxo de caixa, com relatórios dinâmicos, backups automatizados e lógica de recorrência.',
     features: [
-      'Dashboard com visão geral',
-      'Controle de entradas e saídas',
-      'Categorias e metas financeiras',
-      'Relatórios gráficos detalhados',
-      'Estrutura pensada para uso mobile'
+      'Aplicação mobile-first',
+      'Automação de processos financeiros',
+      'Relatórios dinâmicos',
+      'Backups automatizados',
+      'Lógica de recorrência que otimizou em mais de 80% o tempo de gestão do cliente'
     ],
-    tags: ['Python', 'Flask', 'SQLAlchemy', 'PostgreSQL', 'Chart.js'],
+    tags: ['Flask', 'SQLAlchemy', 'Relatórios'],
     link: 'https://github.com/AdrianKoll/CashFlow'
   },
   serviceflow: {
     title: 'ServiceFlow',
-    category: 'Gestão operacional',
+    category: 'Versão base vendida',
     image: 'assets/serviceflow.png',
-    description: 'Sistema para controle de serviços, produtividade e rotina operacional, com foco em organização, indicadores e visual profissional para gestão.',
+    description: 'Versão base de um sistema de gestão operacional modular em Flask, com permissões por papel (RBAC) e landing page integrada.',
     features: [
-      'Painel de indicadores',
-      'Gestão de serviços e equipe',
-      'Controle operacional',
-      'Relatórios e visão gerencial',
-      'Base escalável para SaaS'
+      'Arquitetura modular em Flask',
+      'Controle de acesso por papel (RBAC)',
+      'Landing page integrada'
     ],
-    tags: ['Python', 'Flask', 'SQLAlchemy', 'Jinja2', 'MVC'],
+    tags: ['Flask', 'RBAC', 'Landing Page'],
     link: 'https://github.com/AdrianKoll/serviceflow'
   },
-  inventory: {
-    title: 'Inventory Manager',
-    category: 'Estoque',
-    image: 'assets/inventory.png',
-    description: 'Aplicação para controle de estoque, categorias, produtos, movimentações e alertas de nível mínimo.',
+  medextract: {
+    title: 'MedExtract AI',
+    category: 'Protótipo entregue',
+    image: null,
+    description: 'Protótipo entregue para extração de dados com IA, integrando APIs da OpenAI e Azure para processamento de áudio e imagem (OCR) em ambiente farmacêutico.',
     features: [
-      'Cadastro de produtos',
-      'Controle de estoque mínimo',
-      'Movimentações e categorias',
-      'Alertas de produtos críticos',
-      'Arquitetura organizada'
+      'Integração com APIs da OpenAI e Azure',
+      'Processamento de áudio e imagem',
+      'Reconhecimento óptico de caracteres (OCR) em ambiente farmacêutico'
     ],
-    tags: ['Python', 'SQLite', 'MVC', 'DAO', 'Desktop'],
-    link: 'https://github.com/AdrianKoll/inventory-manager-python'
-  },
-  vehicle: {
-    title: 'Vehicle Access',
-    category: 'Controle veicular',
-    image: 'assets/vehicle.png',
-    description: 'Sistema para registrar e acompanhar entradas e saídas de veículos, com dashboard e visão de acessos recentes.',
-    features: [
-      'Registro de entradas e saídas',
-      'Painel de ocupação',
-      'Histórico de acessos',
-      'Indicadores operacionais',
-      'Interface objetiva e responsiva'
-    ],
-    tags: ['Python', 'Flask', 'CRUD', 'Dashboard', 'SQLite'],
-    link: 'https://github.com/AdrianKoll/VehicleAccessManager'
+    tags: ['OpenAI API', 'Azure AI', 'OCR'],
+    link: null
   }
 };
 
@@ -111,22 +106,42 @@ function initMobileMenu() {
   const menu = getElement(SELECTORS.mobileMenu);
   if (!button || !menu) return;
 
+  let isOpen = false;
+  menu.inert = true;
+
   const closeMenu = () => {
+    if (!isOpen) return;
+    isOpen = false;
     button.classList.remove('open');
     button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-label', 'Abrir menu');
     menu.classList.remove('open');
     menu.setAttribute('aria-hidden', 'true');
+    menu.inert = true;
+    button.focus();
   };
 
   button.addEventListener('click', () => {
-    const isOpen = button.classList.toggle('open');
+    isOpen = !isOpen;
+    button.classList.toggle('open', isOpen);
     button.setAttribute('aria-expanded', String(isOpen));
+    button.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
     menu.classList.toggle('open', isOpen);
     menu.setAttribute('aria-hidden', String(!isOpen));
+    menu.inert = !isOpen;
+    if (isOpen) menu.querySelector('a')?.focus();
   });
 
   getElements('.mobile-menu a, .bottom-nav a, .nav__link').forEach((link) => {
     link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && isOpen) closeMenu();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 680 && isOpen) closeMenu();
   });
 }
 
@@ -172,7 +187,10 @@ function initActiveNavigation() {
   const setActiveLink = (sectionId) => {
     links.forEach((link) => {
       const href = link.getAttribute('href');
-      link.classList.toggle('active', href === `#${sectionId}`);
+      const isActive = href === `#${sectionId}`;
+      link.classList.toggle('active', isActive);
+      if (isActive) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
     });
   };
 
@@ -215,12 +233,22 @@ function initActiveNavigation() {
   window.addEventListener('scroll', updateActiveLink, { passive: true });
 }
 
+function escapeHTML(value) {
+  return String(value).replace(/[&<>'"]/g, (character) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    "'": '&#39;',
+    '"': '&quot;'
+  })[character]);
+}
+
 function renderTags(tags) {
-  return tags.map((tag) => `<span>${tag}</span>`).join('');
+  return tags.map((tag) => `<span>${escapeHTML(tag)}</span>`).join('');
 }
 
 function renderFeatures(features) {
-  return features.map((feature) => `<li>${feature}</li>`).join('');
+  return features.map((feature) => `<li>${escapeHTML(feature)}</li>`).join('');
 }
 
 function initProjectModal() {
@@ -238,10 +266,19 @@ function initProjectModal() {
     link: getElement(SELECTORS.modalLink)
   };
 
+  let lastFocusedElement = null;
+  let modalIsOpen = false;
+
   const closeModal = () => {
+    if (!modalIsOpen) return;
+    modalIsOpen = false;
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
+    modal.setAttribute('inert', '');
     document.body.style.overflow = '';
+    if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+      lastFocusedElement.focus();
+    }
   };
 
   const openModal = (projectKey) => {
@@ -250,20 +287,42 @@ function initProjectModal() {
 
     modalFields.title.textContent = project.title;
     modalFields.category.textContent = project.category;
-    modalFields.image.src = project.image;
-    modalFields.image.alt = `Preview do ${project.title}`;
+    if (project.image) {
+      modalFields.image.src = project.image;
+      modalFields.image.alt = `Preview do ${project.title}`;
+      modalFields.image.hidden = false;
+    } else {
+      modalFields.image.removeAttribute('src');
+      modalFields.image.alt = '';
+      modalFields.image.hidden = true;
+    }
     modalFields.text.textContent = project.description;
     modalFields.features.innerHTML = renderFeatures(project.features);
     modalFields.tags.innerHTML = renderTags(project.tags);
-    modalFields.link.href = project.link;
+    if (project.link) {
+      modalFields.link.href = project.link;
+      modalFields.link.hidden = false;
+      modalFields.link.setAttribute('aria-disabled', 'false');
+    } else {
+      modalFields.link.removeAttribute('href');
+      modalFields.link.hidden = true;
+      modalFields.link.setAttribute('aria-disabled', 'true');
+    }
 
+    lastFocusedElement = document.activeElement;
+    modalIsOpen = true;
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
+    modal.removeAttribute('inert');
     document.body.style.overflow = 'hidden';
+    closeButton.focus();
   };
 
   getElements(SELECTORS.projectCards).forEach((card) => {
-    card.addEventListener('click', () => openModal(card.dataset.project));
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('a')) return;
+      openModal(card.dataset.project);
+    });
   });
 
   closeButton.addEventListener('click', closeModal);
@@ -271,7 +330,28 @@ function initProjectModal() {
     if (event.target === modal) closeModal();
   });
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') closeModal();
+    if (!modalIsOpen) return;
+
+    if (event.key === 'Escape') {
+      closeModal();
+      return;
+    }
+
+    if (event.key !== 'Tab') return;
+    const focusable = modal.querySelectorAll(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    );
+    if (!focusable.length) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
   });
 }
 
