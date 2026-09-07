@@ -41,6 +41,11 @@ body {
 
 img { max-width: 100%; display: block; }
 a { color: inherit; }
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
 button, input, textarea { font: inherit; }
 button { cursor: pointer; }
 
@@ -662,6 +667,22 @@ h1 span, h2 span, .brand strong { color: var(--orange); }
   object-fit: cover;
   transition: transform .35s ease;
 }
+.project-card__image--syncus,
+.project-card__image--medextract,
+.project-card__image--cashflow,
+.project-card__image--serviceflow {
+  display: grid;
+  place-items: center;
+  color: var(--orange);
+  font-size: 42px;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255,138,0,.22), transparent 52%),
+    linear-gradient(135deg, rgba(255,138,0,.12), #080a0d 72%);
+}
+.project-card__image--syncus { color: #ffb21a; }
+.project-card__image--medextract { color: #f6d5ad; }
+.project-card__image--cashflow { color: #78e08f; }
+.project-card__image--serviceflow { color: #74b9ff; }
 .project-card:hover img { transform: scale(1.04); }
 .project-card__open {
   position: absolute;
@@ -784,6 +805,7 @@ h1 span, h2 span, .brand strong { color: var(--orange); }
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
+.education-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .quote {
   padding: 24px;
   border-radius: 18px;
@@ -854,6 +876,8 @@ h1 span, h2 span, .brand strong { color: var(--orange); }
   border: 1px solid var(--line);
   border-radius: 16px;
 }
+.project-modal img[hidden],
+.project-modal__link[hidden] { display: none; }
 .project-modal p { color: var(--muted); line-height: 1.7; }
 .project-modal ul { padding-left: 18px; color: #e9e9e9; line-height: 1.9; }
 .project-modal__link { width: 100%; margin-top: 22px; }
@@ -881,6 +905,7 @@ h1 span, h2 span, .brand strong { color: var(--orange); }
   .hero__actions, .social-box__links { justify-content: center; }
   .hero p { margin-inline: auto; }
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .education-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .split-grid { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stats article:nth-child(2) { border-right: 0; }
